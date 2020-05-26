@@ -1,3 +1,7 @@
+// const categoria = document.getElementById("categoria");
+// const coupling = document.getElementById("coupling");
+// const button = document.getElementById("button");
+
 function topicChoice(topic) {
     var cat = Math.floor(Math.random()*(topic.length));
     var msg = "In questo turno l'argomento è " + topic[cat];
@@ -46,11 +50,33 @@ function randomCoupl(partecipants) {
 }
 
 
-var partecipants = ["Valerio", "Giuliana", "Bernardo", "Gloria"];
-var topic = ["Storia", "Film", "Cartoni", "Serie TV", "Disney","Oggetti di Casa", "Mestieri"];
+function addCategory() {
+    var category = topicChoice(topic);
+    paragraph = document.createElement("p")
+    paragraph.innerHTML = category
+    categoria.appendChild(paragraph)
+}
 
+function displayCouplings() {
+    var list = randomCoupl(partecipants);
+    var msg = "\n";
+    list.forEach(element => {
+        msg += (element + "<br>");
+    });
+    coupling.innerHTML = msg
+    console.log(msg)
+}
+
+function unpauseLoop() {
+
+}
+
+var partecipants = ["Valerio", "Giuliana", "Bernardo", "Gloria"];
+var topic = ["Storia", "Film", "Cartoni", "Serie TV", "Disney","Animali del Cinema", "Mestieri", "Cibi"];
+let turn = 1;
 
 //  Running script //
+
 while (topic.length > 0) {
     topicChoice(topic);
     randomCoupl(partecipants);
