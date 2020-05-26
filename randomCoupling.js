@@ -8,7 +8,7 @@ const restartButton = document.getElementById("restartButton");
 const msgCatInit = "In questo turno la categoria è...";
 const msgCouplInit = "... sceglie il personaggio per  ...";
 const msgCatPlay = "In questo turno la categoria è ";
-const msgCouplPlay = " sceglie il perosnaggio per ";
+const msgCouplPlay = "\t\t sceglie il personaggio per \t\t";
 const msgCatEnd = "Hai finito le categorie.";
 const msgCouplEnd = "Premi il pulsante e ricomincia a giocare!";
 

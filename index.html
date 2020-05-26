@@ -8,17 +8,26 @@
 </head>
 <body>
 <div id="main" class="overall"> 
-    <h1 id = "title" class="title"> Indovina il personaggio </h1><br>
-    <input type="button" value="Next round" id="button"> 
-    <input type="button" value="Restart" id="restartButton">
-    <h2 id="subtitle">Categoria</h2><br>
-    <div>
-        <p id= "categoria">  </p>
+    <div class="title">
+      <h1 id = "title"> Indovina il personaggio <br></h1><br><br>
     </div>
-    <h2 id="subtitle">Accoppiamenti</h2><br>
-    <div >
-        <p id="coupling"> </p>
-    </div> <br>
+    <div class="back-button">
+      <input type="button" value="Next round" id="button" class = "button"> 
+      <input type="button" value="Restart" id="restartButton"  class = "button">
+      <br><br>
+    </div>
+    <div class="subtitle">
+      <h2 >Categoria</h2>
+    </div>
+    <div class= "paragraph">
+        <br><p id= "categoria" ></p><br>
+    </div>
+    <div class="subtitle">
+      <h2>Accoppiamenti</h2>
+    </div>
+    <div class="paragraph">
+       <br> <p id="coupling" ></p><br>
+    </div>
 </div>
 <script src="randomCoupling.js"></script>
 </body>
