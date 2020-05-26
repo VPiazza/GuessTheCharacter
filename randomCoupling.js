@@ -4,9 +4,19 @@ const coupling = document.getElementById("coupling");
 const button = document.getElementById("button");
 const restartButton = document.getElementById("restartButton");
 
+// User Interface: Messages
+const msgCatInit = "In questo turno la categoria è...";
+const msgCouplInit = "... sceglie il personaggio per  ...";
+const msgCatPlay = "In questo turno la categoria è ";
+const msgCouplPlay = " sceglie il perosnaggio per ";
+const msgCatEnd = "Hai finito le categorie.";
+const msgCouplEnd = "Premi il pulsante e ricomincia a giocare!";
+
 // Initialization functions
 function initTopic() {
     const topic = ["Storia", "Film", "Cartoni", "Serie TV", "Disney","Animali del Cinema", "Mestieri", "Cibi"];
+    categoria.innerText = msgCatInit;
+    coupling.innerText = msgCouplInit;
     return topic
 }
 
@@ -21,10 +31,10 @@ function topicChoice(topic) {
     let msg = "";
     if (topic.length > 0) {
         var cat = Math.floor(Math.random()*(topic.length));
-        msg = "In questo turno l'argomento è " + topic[cat];
+        msg = msgCatPlay + topic[cat];
         topic.splice(cat,1);
     } else {
-        msg = "Hai finito le categorie. Ricomincia dall'inizio!"
+        msg = msgCatEnd;
     }
     return msg;
 }
@@ -44,7 +54,7 @@ function startPartSet(partcipants) {
 
 function randomCoupl(partecipants) {
     var couples = [];
-    if (categoria.innerText != "Hai finito le categorie. Ricomincia dall'inizio!") {
+    if (categoria.innerText != msgCatEnd) {
         var chooser = [];
         var chosen = [];
         var P1 = [];
@@ -68,14 +78,12 @@ function randomCoupl(partecipants) {
             }
         }
         for (i=0; i < P1.length; i+=1) { 
-            const msg = P1[i] + " sceglie il personaggio per " + P2[i];
+            const msg = P1[i] + msgCouplPlay + P2[i];
             couples.push(msg);
         }
     } else {
-        const final_line = "Hai finito le categorie." 
-        const final_line2 = "Ricomincia dall'inizio!"
-        couples.push(final_line);
-        couples.push(final_line2);
+        couples.push(msgCatEnd);
+        couples.push(msgCouplEnd);
     }
     return couples
 }
@@ -102,9 +110,14 @@ function defineTurn() {
 }
 
 function restartGame() {
-    [chooser, chosen, P1, P2] = startingSets(partecipants);
-    topic = startingTopic();
+    const restartTopic = initTopic();
+    topic.splice(0, topic.length);
+    restartTopic.forEach(e => {
+        topic.push(e);
+    });
+    return topic
 }
+
 
 // Initialization
 const partecipants = initPartecipants();
