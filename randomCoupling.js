@@ -3,6 +3,10 @@ const categoria = document.getElementById("categoria");
 const coupling = document.getElementById("coupling");
 const button = document.getElementById("button");
 const restartButton = document.getElementById("restartButton");
+// const topicTextbox = document.getElementById("topicTextbox");    I want to add a topic textbox
+// const topicButton = document.getElementById("topicButton");
+// const topicList = document.getElementById("topicList");
+
 
 // User Interface: Messages
 const msgCatInit = "In questo turno la categoria è...";
@@ -12,9 +16,21 @@ const msgCouplPlay = "\t\t sceglie il personaggio per \t\t";
 const msgCatEnd = "Hai finito le categorie.";
 const msgCouplEnd = "Premi il pulsante e ricomincia a giocare!";
 
+// Data Collection
+function addTopic() {
+    const paragraph = document.createElement("p");
+    paragraph.innerText = topicTextbox.value;
+    topicList.appendChild(paragraph);
+}
+
 // Initialization functions
 function initTopic() {
-    const topic = ["Storia", "Film", "Cartoni", "Serie TV", "Disney","Animali del Cinema", "Mestieri", "Cibi"];
+    // const topics = document.getElementsByClassName("topicList");     Need to initialize the list
+    // let topic = [];
+    // for (e in topics.item) {
+    //     topic.push(e);
+    // };
+    const topic = ["Storia", "Mestieri", "Cartoni", "Disney"]
     categoria.innerText = msgCatInit;
     coupling.innerText = msgCouplInit;
     return topic
@@ -105,6 +121,7 @@ function displayCouplings() {
 
 // Events
 function defineTurn() {
+    const topic = document.getElementsByClassName("topicList");
     addCategory();
     displayCouplings(partecipants);
 }
@@ -126,3 +143,4 @@ const topic = initTopic();
 // Listeners
 button.addEventListener("click", defineTurn);
 restartButton.addEventListener("click", restartGame)
+// topicButton.addEventListener("click", addTopic);
