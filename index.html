@@ -21,19 +21,60 @@
     <div class="back-button">
       <input type="button" value="Next round" id="button" class = "button"> 
       <input type="button" value="Restart" id="restartButton"  class = "button">
+    </div>
+
+    <div class="box">
+      <div class="subtitle">
+        <h2>Inserisci qui i Partecipanti</h2>
+      </div>
+      <div class = "listing">
+        <p>Inserisci qui i Partecipanti</p> 
+      </div>
       <br><br>
+      <div id="peopleButton">
+        <input type="text" value="Digita il nome" id="peopleTextbox">
+        <input type="button" value="Aggiungi">
+      </div>
     </div>
-    <div  class="subtitle">
-      <h2 >Categoria</h2>
+
+
+    <div  class="box">
+      <div class="subtitle">
+        <h2>Categoria</h2>
+      </div>
+      <div id="topicDisplayBox">
+        <div class= "paragraph">
+          <br><p id= "categoria" ></p><br>
+        </div>
+      </div>
     </div>
-    <div class= "paragraph">
-        <br><p id= "categoria" ></p><br>
+
+    <div class="box">
+      <div class="subtitle">
+        <h2> Inserisci qui le Categorie </h2>
+      </div>
+      <div id="topicBox">
+        <div class = "listing">
+          <p>Inserisci qui le Categorie</p>
+        </div>
+      </div>
+      <br>
+      <div id="topicButton">
+        <input type="text" value="Digita la categoria" id="topicTextbox">
+        <input type="button" value="Aggiungi">
+      </div>
+      <br>
     </div>
-    <div class="subtitle">
-      <h2>Accoppiamenti</h2>
-    </div>
-    <div class="paragraph">
-       <br> <p id="coupling" ></p><br>
+
+    <div  class="box">
+      <div class="subtitle">
+        <h2>Accoppiamenti</h2>
+      </div>
+      <div id="topicDisplayBox">
+        <div class="paragraph">
+          <br> <p id="coupling" ></p><br>
+        </div>
+      </div>
     </div>
 </div>
 <script src="randomCoupling.js"></script>
